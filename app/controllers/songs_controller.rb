@@ -14,9 +14,8 @@ class SongsController < ApplicationController
 
   def create
    #binding.pry
-    @song = Song.new(song_params)
-    
-    @song.notes.build
+    artist = Artist.find_or_create_by(name: song_params[:artist_name])
+    @song = artist.songs.build(song_params)
     
     if @song.save
       redirect_to @song
