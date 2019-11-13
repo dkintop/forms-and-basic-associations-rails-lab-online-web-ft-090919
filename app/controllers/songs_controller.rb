@@ -15,7 +15,7 @@ class SongsController < ApplicationController
   def create
    #binding.pry
     @song = Song.new(song_params)
-    binding.pry
+    
     @song.notes.build
     
     if @song.save
