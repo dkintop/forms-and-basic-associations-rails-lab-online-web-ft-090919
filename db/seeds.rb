@@ -160,3 +160,5 @@ genres = Hash[[
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
 
+Artist.create(name: "Prince")
+Song.create(title: "something", artist_id: 1, genre_id: 1)
